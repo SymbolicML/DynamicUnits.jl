@@ -6,6 +6,7 @@ version = "0.11.0"
 [deps]
 Compat = "34da2185-b29b-5c13-b0c7-acf172513d20"
 PackageExtensionCompat = "65ce6f38-6b18-4e1d-a461-8949797d7930"
+PrecompileTools = "aea7be01-6a6a-4083-8856-8a6e6704d82a"
 Tricks = "410a4b4d-49e4-4fbc-ab6d-cb71b17b3775"
 
 [weakdeps]
@@ -25,6 +26,7 @@ Aqua = "0.7"
 Compat = "3.42, 4"
 Measurements = "2"
 PackageExtensionCompat = "1.0.2"
+PrecompileTools = "1"
 ScientificTypes = "3"
 Tricks = "0.1"
 Unitful = "1"

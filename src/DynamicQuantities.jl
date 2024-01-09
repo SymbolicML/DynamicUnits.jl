@@ -19,6 +19,7 @@ include("uparse.jl")
 include("symbolic_dimensions.jl")
 include("complex.jl")
 include("disambiguities.jl")
+include("precompile.jl")
 
 include("deprecated.jl")
 export expand_units
