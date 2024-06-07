@@ -238,6 +238,7 @@ end
     return constructorof(Qout)(val, dims)
 end
 
+Base.eltype(::Union{Type{<:AbstractDimensions{R}},AbstractDimensions{R}}) where {R} = R
 dim_type(::Type{Q}) where {T,D<:AbstractDimensions,Q<:UnionAbstractQuantity{T,D}} = D
 dim_type(::Type{<:UnionAbstractQuantity}) = DEFAULT_DIM_TYPE
 

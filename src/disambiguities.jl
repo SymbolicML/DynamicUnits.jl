@@ -109,3 +109,14 @@ for (type, _, _) in ABSTRACT_QUANTITY_TYPES, numeric_type in (Bool, BigFloat)
         end
     end
 end
+
+
+################################################################################
+# Disambiguate StaticDimensions constructors ###################################
+################################################################################
+StaticDimensions(::Type{R}; kws...) where {R} = StaticDimensions(Dimensions(R; kws...))
+StaticDimensions{Rold}(::Type{R}; kws...) where {Rold,R} = StaticDimensions(Dimensions(R; kws...))  # TODO: Is this correct?
+StaticDimensions{R,D}(d::AbstractDimensions) where {R,D} = (d = convert(D, d); StaticDimensions(d))
+StaticDimensions{R,D}(dims...) where {R,D} = StaticDimensions(constructorof(D)(dims...))
+StaticDimensions{Rold,D}(::Type{R}; kws...) where {Rold,D,R} = StaticDimensions(constructorof(D)(R; kws...))
+################################################################################
